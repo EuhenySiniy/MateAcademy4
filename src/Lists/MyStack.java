@@ -1,4 +1,4 @@
-package academy.mate.task1;
+package Lists;
 
 import java.util.Arrays;
 

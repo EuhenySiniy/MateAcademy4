@@ -1,4 +1,4 @@
-package academy.mate.task1;
+package Lists;
 
 public class StartApp {
     public static void main(String[] args) {

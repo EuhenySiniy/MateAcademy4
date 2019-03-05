@@ -1,4 +1,4 @@
-package academy.mate.task1;
+package Lists;
 
 public interface List<E> {
     void add(E e);

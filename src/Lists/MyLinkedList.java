@@ -1,4 +1,4 @@
-package academy.mate.task1;
+package Lists;
 
 public class MyLinkedList<E> implements List<E> {
 
