@@ -15,20 +15,20 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     private int size;
-    private Node<E> prev;
-    private Node<E> next;
+    private Node<E> first;
+    private Node<E> last;
 
     @Override
     public void add(E e) {
         Node<E> node;
         if (size == 0) {
             node = new Node<>(null, e, null);
-            prev = node;
-            next = node;
+            first = node;
+            last = node;
         } else {
-            node = new Node<>(next, e, null);
-            next.prev = node;
-            next = node;
+            node = new Node<>(last, e, null);
+            last.prev = node;
+            last = node;
         }
         size++;
     }
@@ -39,7 +39,7 @@ public class MyLinkedList<E> implements List<E> {
             throw new ArrayIndexOutOfBoundsException(index);
         }
 
-        Node<E> node = prev;
+        Node<E> node = first;
         for (int j = 0; j < index; j++) {
             node = node.next;
         }
@@ -67,7 +67,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public void clear() {
-        Node<E> node = prev;
+        Node<E> node = first;
 
         do {
             Node<E> next = node.next;
@@ -77,7 +77,7 @@ public class MyLinkedList<E> implements List<E> {
             node = next;
         } while (node != null);
 
-        prev = next = null;
+        first = last = null;
         size = 0;
     }
 
@@ -92,7 +92,7 @@ public class MyLinkedList<E> implements List<E> {
             throw new ArrayIndexOutOfBoundsException(index);
         }
 
-        Node<E> element = prev;
+        Node<E> element = first;
         for (int j = 0; j < index; j++) {
             element = element.next;
         }

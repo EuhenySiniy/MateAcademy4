@@ -3,17 +3,18 @@ package Lists;
 import java.util.Arrays;
 
 public class MyArrayList<E> implements List<E> {
-    private int capacity = 10;
+    private final int DEFAULT_CAPACITY = 10;
     private Object[] array;
-    private int indexLastElemet = -1;
     private int size;
 
     public MyArrayList() {
-        array = new Object[capacity];
+        array = new Object[DEFAULT_CAPACITY];
     }
 
     public MyArrayList(int size) {
-        array = new Object[size];
+        if (size < DEFAULT_CAPACITY) {
+            array = new Object[DEFAULT_CAPACITY];
+        }
     }
 
     @Override
